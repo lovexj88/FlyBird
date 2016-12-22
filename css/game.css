@@ -1,0 +1,107 @@
+
+/*  开始界面 start  */
+
+
+/*游戏的背景*/
+.game-wrapper {
+    position: relative;
+    top: 100px;
+    
+    margin: 0 auto;
+    width: 343px;
+    height: 480px;
+    
+    background-image: url("../images/bg.jpg");
+
+    overflow: visible;
+}
+
+/*开始界面的标题*/
+.game-title {
+    position: absolute;
+    top: 100px;
+    left: 53px;
+    
+    width: 236px;
+    height: 77px;
+    
+    background-image: url("../images/head.jpg");
+
+    transition: top .2s ease;
+}
+
+/*开始标题中的小鸟图片*/
+.game-wrapper .bird {
+    float: right;
+
+    margin-top: 8px;
+
+    /*animation: move-bird .8s infinite;*/
+
+    /*transition: animation .8s ease;*/
+}
+
+/*小鸟在开始界面上的摆动动画*/
+@-webkit-keyframes  move-bird {
+    0%   { transform: rotate(0deg) translate(0, -10px);}
+    25%   { transform: rotate(0deg) translate(0, 0px);}
+    50%   { transform: rotate(0deg) translate(0, 10px);}
+    75%  { transform: rotate(0deg) translate(0, 0px); }
+    100% { transform: rotate(0deg) translate(0, -10px); }
+}
+
+/*居中的开始按钮*/
+.game-wrapper .start-btn {
+    position: absolute;
+    top: 250px;
+    left: 129px;
+
+    margin: 0;
+    padding: 0;
+    width: 85px;
+    height: 29px;
+
+    background-image: url("../images/start.jpg");
+
+    cursor: pointer;
+}
+
+/*草地*/
+.game-wrapper .grass {
+    position: absolute;
+    top: 423px;
+
+    margin: 0;
+    padding: 0;
+    width: 343px;
+    height: 14px;
+
+    background-image: url("../images/banner.jpg");
+}
+
+/*草地1*/
+.grass-land-one {
+    left: 0;
+}
+
+/*草地2*/
+.grass-land-two {
+    left: 343px;
+}
+
+/*  开始界面 end  */
+
+/* 游戏中的小鸟 */
+.game-wrapper .fly-bird {
+    position: absolute;
+    top: 200px;
+    left: 50px;
+    z-index: 10;
+
+    width: 40px;
+    height: 28px;
+
+    background: url('../images/bird0.png') no-repeat;
+
+    transition: top .01s ease;
+}
