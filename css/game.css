@@ -13,7 +13,7 @@
     
     background-image: url("../images/bg.jpg");
 
-    overflow: visible;
+    overflow: hidden;
 }
 
 /*开始界面的标题*/
@@ -33,21 +33,7 @@
 /*开始标题中的小鸟图片*/
 .game-wrapper .bird {
     float: right;
-
     margin-top: 8px;
-
-    /*animation: move-bird .8s infinite;*/
-
-    /*transition: animation .8s ease;*/
-}
-
-/*小鸟在开始界面上的摆动动画*/
-@-webkit-keyframes  move-bird {
-    0%   { transform: rotate(0deg) translate(0, -10px);}
-    25%   { transform: rotate(0deg) translate(0, 0px);}
-    50%   { transform: rotate(0deg) translate(0, 10px);}
-    75%  { transform: rotate(0deg) translate(0, 0px); }
-    100% { transform: rotate(0deg) translate(0, -10px); }
 }
 
 /*居中的开始按钮*/
@@ -91,7 +77,10 @@
 
 /*  开始界面 end  */
 
-/* 游戏中的小鸟 */
+
+/*  游戏界面 start   */
+
+/*游戏中的小鸟*/
 .game-wrapper .fly-bird {
     position: absolute;
     top: 200px;
@@ -105,3 +94,46 @@
 
     transition: top .01s ease;
 }
+
+/*上管道容器*/
+.game-wrapper .up-block-wrapper {
+    position: absolute;
+    top: 0;
+    left: 450px;
+    /*z-index: 10;*/
+    width: 62px;
+}
+
+/*上管道底座*/
+.up-block-wrapper .up-div-mod {
+    width: 100%;
+
+    background: url("../images/up_mod.png") repeat-y;
+}
+/*上管道管道口*/
+.up-block-wrapper .up-div-pipe {
+    width: 100%;
+
+    background: url("../images/up_pipe.png") no-repeat;
+}
+/*下管道容器*/
+.game-wrapper .down-block-wrapper {
+    position: absolute;
+    /*top: 360px;*/
+    left: 450px;
+    /*z-index: 10;*/
+    width: 62px;
+}
+
+/*下管道底座*/
+.down-block-wrapper .down-div-mod {
+    width: 100%;
+    background: url("../images/down_mod.png") repeat-y;
+}
+/*下管道管道口*/
+.down-block-wrapper .down-div-pipe {
+    width: 100%;
+    background: url("../images/down_pipe.png") no-repeat;
+}
+
+/*  游戏界面 end   */

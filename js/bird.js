@@ -40,6 +40,8 @@ var birdObj = {
                 birdObj.fallSpeed = 0;
                 clearInterval(birdObj.flyTimer);
                 clearInterval(birdObj.wingTimer);
+                clearInterval(blockTimer); // 管道停止移动
+                clearInterval(landTimer); // 草地停止移动
             }
             
             // 小鸟的最大下落速度控制在15以内
@@ -50,7 +52,7 @@ var birdObj = {
         
     },
     /**
-     *  小鸟翅膀煽动的函数,两个状态
+     *  小鸟翅膀煽动的函数,两个状态--上升和下降
      */
     wingWave: function () {
         var i = 0, j = 0;
