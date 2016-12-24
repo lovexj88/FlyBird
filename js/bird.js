@@ -26,7 +26,7 @@ var birdObj = {
     flyBirdObj: function () {
         // 启动小鸟下落定时器
         birdObj.flyTimer = setInterval(function() {
-            birdObj.div.style.top = birdObj.div.offsetTop + (birdObj.fallSpeed++) + 'px';
+            birdObj.div.style.top = birdObj.div.offsetTop + (birdObj.fallSpeed += 2 ) + 'px';
     
             // 小鸟不应该飞离上边界
             if(birdObj.div.offsetTop < 0) {
@@ -34,19 +34,25 @@ var birdObj = {
                 birdObj.fallSpeed = 2;
             }
             
-            // 小鸟掉到地面, 清除下落定时器,清除翅膀摆动定时器
+            // 小鸟掉到地面, 清除下落定时器,清除翅膀摆动定时器,显示游戏结束
             if(birdObj.div.offsetTop >= 395) {
+                
                 birdObj.div.style.top = '395px';
                 birdObj.fallSpeed = 0;
+                
                 clearInterval(birdObj.flyTimer);
                 clearInterval(birdObj.wingTimer);
                 clearInterval(blockTimer); // 管道停止移动
                 clearInterval(landTimer); // 草地停止移动
+    
+                scoreWrapper.style.display = 'none';    // 隐藏计分器
+                gameWrapper.onclick = null;             // 取消游戏界面的点击事件
+                gameOver.style.display = 'block';       // 显示结束面板
             }
             
-            // 小鸟的最大下落速度控制在15以内
-            if(birdObj.fallSpeed >= 15) {
-                birdObj.fallSpeed = 15;
+            // 小鸟的最大下落速度控制在12以内
+            if(birdObj.fallSpeed >= 12) {
+                birdObj.fallSpeed = 12;
             }
         }, 50);
         

@@ -13,6 +13,14 @@ var baseObj = {
         return Math.floor(Math.random() * (high - low + 1) + low);
     },
     /**
+     * 获取DOM元素
+     * @param selector
+     * @returns {Element|NodeList}
+     */
+    queryElement: function (selector) {
+        return document.querySelector(selector) || document.getElementById(selector);
+    },
+    /**
      * 生成div 元素
      * @param blockClassName  需要添加的类名
      * @returns {Element}   返回新建的div元素对象
