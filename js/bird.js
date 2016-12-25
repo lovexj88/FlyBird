@@ -42,19 +42,16 @@ var birdObj = {
                 
                 clearInterval(birdObj.flyTimer);
                 clearInterval(birdObj.wingTimer);
-                clearInterval(blockTimer); // 管道停止移动
-                clearInterval(landTimer); // 草地停止移动
-    
-                scoreWrapper.style.display = 'none';    // 隐藏计分器
-                gameWrapper.onclick = null;             // 取消游戏界面的点击事件
-                gameOver.style.display = 'block';       // 显示结束面板
+                
+                // 游戏结束
+                events.handleGameOver();
             }
             
             // 小鸟的最大下落速度控制在12以内
             if(birdObj.fallSpeed >= 12) {
                 birdObj.fallSpeed = 12;
             }
-        }, 50);
+        }, 40);
         
     },
     /**
@@ -78,15 +75,6 @@ var birdObj = {
                 birdObj.div.style.backgroundImage = up[j++];
                 if(j == 2) j = 0;
             }
-        }, 120);
+        }, 100);
     }
 };
-
-
-
-
-
-
-
-
-

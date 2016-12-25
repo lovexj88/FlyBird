@@ -1,7 +1,5 @@
 
 /*  开始界面 start  */
-
-
 /*游戏的背景*/
 .game-wrapper {
     position: relative;
@@ -77,9 +75,7 @@
 
 /*  开始界面 end  */
 
-
 /*  游戏界面 start   */
-
 /*游戏中的小鸟*/
 .game-wrapper .fly-bird {
     position: absolute;
@@ -93,8 +89,6 @@
     background: url('../images/bird0.png') no-repeat;
 
     transition: top .05s ease;
-
-    /*border: 1px solid red;*/
 }
 
 /*上管道容器*/
@@ -112,12 +106,14 @@
 
     background: url("../images/up_mod.png") repeat-y;
 }
+
 /*上管道管道口*/
 .up-block-wrapper .up-div-pipe {
     width: 100%;
 
     background: url("../images/up_pipe.png") no-repeat;
 }
+
 /*下管道容器*/
 .game-wrapper .down-block-wrapper {
     position: absolute;
@@ -132,6 +128,7 @@
     width: 100%;
     background: url("../images/down_mod.png") repeat-y;
 }
+
 /*下管道管道口*/
 .down-block-wrapper .down-div-pipe {
     width: 100%;
@@ -152,7 +149,7 @@
     overflow: hidden;
 }
 
-.score div {
+.score-playing div {
     display: none;
     float: left;
     width: 28px;
@@ -176,9 +173,12 @@
 
     text-align: center;
 }
+
 .game-over div {
     display: inline-block;
 }
+
+/*游戏结束时显示的图标*/
 .game-over .game-over-icon {
     width: 221px;
     height: 40px;
@@ -186,14 +186,48 @@
     background: url("../images/game_over.jpg");
 }
 
+/*游戏结束时的分数面板*/
 .game-over .game-info {
+    position: relative;
+
     width: 269px;
     height: 135px;
 
     background: url("../images/message.jpg");
 }
 
+.game-over .game-info .current-score,
+.game-over .game-info .best-score {
+    position: absolute;
+}
+
+.game-info .current-score div,
+.game-info .best-score div {
+    display: inline-block;
+    float: left;
+    width: 16px;
+    height: 20px;
+}
+
+.game-info .current-score div.cur-unit,
+.game-info .best-score div.bs-unit {
+    display: inline-block;
+    background: url("../images/number_score_00.png");
+}
+.game-over .game-info .current-score {
+    top: 38px;
+    right: 25px;
+}
+
+.game-over .game-info .best-score {
+    bottom: 28px;
+    right: 25px;
+}
+
+/*游戏结束时的重新开始按钮*/
 .game-over .game-restart {
+    margin-top: 3px;
+
     width: 96px;
     height: 33px;
 
@@ -202,4 +236,3 @@
     cursor: pointer;
 }
 /*  结束界面 end  */
-

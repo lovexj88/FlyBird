@@ -8,6 +8,7 @@
 </head>
 <body>
     <div class="game-wrapper">
+        
         <!--游戏开始界面的标题-->
         <div class="game-title">
             <!--标题中的小鸟图片-->
@@ -17,12 +18,15 @@
         <!--居中的开始按钮-->
         <div class="start-btn"></div>
         
-        <!--计分器-->
-        <div class="score">
+        <!--游戏中的计分器-->
+        <div class="score score-playing">
             <div class="centile"></div><!--百位-->
             <div class="decade"></div> <!--十位-->
             <div class="unit"></div>   <!--个位-->
         </div>
+        
+        <!--管道容器-->
+        <div class="pipe-wrapper"></div>
         
         <!--底部滚动的草地-->
         <div class="grass grass-land-one"></div>
@@ -30,14 +34,28 @@
         
         <!--游戏结束界面-->
         <div class="game-over">
-            <div class="game-over-icon fadein-top"></div>
-            <div class="game-info"></div>
-            <div class="game-restart"></div>
+            <div class="game-over-icon fadein-top"></div>  <!--结束面板logo-->
+            <div class="game-info">                        <!--分数面板-->
+                <div class="current-score">    <!--当前游戏的分数-->
+                    <div class="cur-centile"></div><!--百位-->
+                    <div class="cur-decade"></div> <!--十位-->
+                    <div class="cur-unit"></div>   <!--个位-->
+                </div>
+                <div class="best-score">       <!--历史最高纪录-->
+                    <div class="bs-centile"></div><!--百位-->
+                    <div class="bs-decade"></div> <!--十位-->
+                    <div class="bs-unit"></div>   <!--个位-->
+                </div>
+            </div>
+            <div class="game-restart"></div>       <!--重新开始游戏按钮-->
         </div>
     </div>
+    
     <script src="./js/baseObj.js"></script>
     <script src="./js/blocks.js"></script>
     <script src="./js/bird.js"></script>
+    <script src="./js/event.js"></script>
     <script src="./js/start.js"></script>
+
 </body>
 </html>

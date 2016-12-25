@@ -14,11 +14,12 @@ var baseObj = {
     },
     /**
      * 获取DOM元素
-     * @param selector
+     * @param selector 要检索的元素的选择器
+     * @param context  检索的上下文
      * @returns {Element|NodeList}
      */
-    queryElement: function (selector) {
-        return document.querySelector(selector) || document.getElementById(selector);
+    queryElement: function (selector, context) {
+        return context ? document.querySelector(context +' '+selector) : document.querySelector(selector);
     },
     /**
      * 生成div 元素
@@ -74,12 +75,3 @@ var baseObj = {
         return isCrashed;
     }
 };
-
-
-
-
-
-
-
-
-

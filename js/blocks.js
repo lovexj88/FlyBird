@@ -53,8 +53,8 @@ Block.prototype.createBlock = function () {
     this.downBlockWrapper.appendChild(this.downDivMod);
     
     // 添加到游戏界面
-    gameWrapper.appendChild(this.upBlockWrapper);
-    gameWrapper.appendChild(this.downBlockWrapper);
+    pipeWrapper.appendChild(this.upBlockWrapper);
+    pipeWrapper.appendChild(this.downBlockWrapper);
 };
 
 /**
