@@ -113,9 +113,12 @@ var events = {
     
         // 显示计分器,初始状态下显示个位
         scoreWrapper.style.display = 'block';
+		playingCentile.style.display = 'none';
+        playingDecade.style.display = 'none';
         playingUnit.style.display = 'block';
         playingUnit.style.background = 'url(./images/0.jpg)';
-    
+
+                
     
         // 启动管道移动定时器
         blockTimer = setInterval(events.handleBlockMove, 20);
@@ -265,7 +268,7 @@ var events = {
     },
     
     handleGameRestart: function () {
-        events.init();
+        
         
         // 清空管道
         while (pipeWrapper.hasChildNodes()){
@@ -274,5 +277,6 @@ var events = {
         
         // 移除飞行中的小鸟
         gameWrapper.removeChild(flyBird);
-    }
+		events.init();
+	}
 };
