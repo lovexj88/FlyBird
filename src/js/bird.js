@@ -35,16 +35,19 @@ var birdObj = {
             }
             
             // 小鸟掉到地面, 清除下落定时器,清除翅膀摆动定时器,显示游戏结束
-            if(birdObj.div.offsetTop >= 395) {
+            if(birdObj.div.offsetTop > 398 && birdObj.div.offsetTop <= 423) {
                 
-                birdObj.div.style.top = '395px';
+                birdObj.div.style.top = '398px';
                 birdObj.fallSpeed = 0;
                 
                 clearInterval(birdObj.flyTimer);
                 clearInterval(birdObj.wingTimer);
-                
-                // 游戏结束
-                events.handleGameOver();
+
+                if(!isGameOver) {
+                    // 游戏结束
+                    events.handleGameOver();
+                }
+                isGameOver = true;
             }
             
             // 小鸟的最大下落速度控制在12以内
@@ -60,9 +63,9 @@ var birdObj = {
     wingWave: function () {
         var i = 0, j = 0;
         // 小鸟向上飞时的图片
-        var up = ['url(./images/up_bird0.png)', 'url(./images/up_bird1.png)'];
+        var up = ['url(./src/images/up_bird0.png)', 'url(./src/images/up_bird1.png)'];
         // 小鸟向下飞时的图片
-        var down = ['url(./images/down_bird0.png)', 'url(./images/down_bird1.png)'];
+        var down = ['url(./src/images/down_bird0.png)', 'url(./src/images/down_bird1.png)'];
         
         birdObj.wingTimer = setInterval(function () {
             // 下落

@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./css/game.css">
+    <link rel="icon shortcut bookmark" type="image/png" href="favicon.ico">
+    <link rel="stylesheet" href="./src/css/normalize.css">
+    <link rel="stylesheet" href="./src/css/game.css">
 </head>
 <body>
     <div class="game-wrapper">
+        <audio id="bg-music" src="./src/audio/bgm.mp3" autoplay="true" loop style="display: none"></audio>
+        <audio id="fly-music" style="display: none"></audio>
+        <audio id="info-music" style="display: none"></audio>
+        <audio id="crash-music" style="display: none"></audio>
         
         <!--游戏开始界面的标题-->
         <div class="game-title">
             <!--标题中的小鸟图片-->
-            <img class="bird" src="./images/bird0.png" alt="bird">
+            <img class="bird" src="./src/images/bird0.png" alt="bird">
         </div>
         
         <!--居中的开始按钮-->
@@ -51,11 +56,11 @@
         </div>
     </div>
     
-    <script src="./js/baseObj.js"></script>
-    <script src="./js/blocks.js"></script>
-    <script src="./js/bird.js"></script>
-    <script src="./js/event.js"></script>
-    <script src="./js/start.js"></script>
+    <script src="./src/js/baseObj.js"></script>
+    <script src="./src/js/blocks.js"></script>
+    <script src="./src/js/bird.js"></script>
+    <script src="./src/js/event.js"></script>
+    <script src="./src/js/start.js"></script>
 
 </body>
 </html>

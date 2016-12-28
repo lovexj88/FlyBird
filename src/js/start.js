@@ -3,9 +3,11 @@
  */
 
 // 所有用到的图片得到公共URL
-var imageBaseUrl = './images/';
+var imageBaseUrl = './src/images/';
 // 分数图片的公共名字
 var numberScore = 'number_score_0';
+// 音效URL
+var musicUrl = './src/audio/';
 
 /**
  * 让开始标题摆动,同时切换小鸟的图片,使其动起来
@@ -25,7 +27,7 @@ var gameTitle = null;
 var Y = 0;  // 小鸟每次上移的偏移量
 
 // 小鸟图片的路径数组,通过切换图片,来显示出小鸟翅膀摆动的样子
-var imgUrlArr = ['./images/bird1.png', './images/bird0.png'];
+var imgUrlArr = ['./src/images/bird1.png', './src/images/bird0.png'];
 var index     = 0; // 数组索引
 
 // 纪录游戏中的分数
@@ -43,6 +45,12 @@ var scoreWrapper   = baseObj.queryElement('.score'),
 
 var gameOver = null;      // 游戏结束面板
 var isGameOver = false;   // ?判断游戏是否结束
+
+// 背景音乐,游戏音效
+var BGM = baseObj.queryElement('#bg-music');
+var infoMusic = baseObj.queryElement('#info-music');
+var flyMusic = baseObj.queryElement('#fly-music');
+var crashMusic = baseObj.queryElement('#crash-music');
 
 // 标题摆动的定时器
 var headerWaveTimer = null;
